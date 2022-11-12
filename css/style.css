@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  flex-direction: column;
+  position: relative;
+}
+
+table th {
+  padding: 10px 16px;
+}
+table td {
+  padding: 10px 16px;
+}
+
+td button:first-child {
+  padding: 4px 15px;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 4px;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(255, 191, 0);
+  cursor: pointer;
+}
+td button {
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 4px;
+  color: black;
+  background-color: RGB(255, 0, 17);
+  cursor: pointer;
+  color: wheat;
+}
+td button a {
+  text-decoration: none;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+td button a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+table tr,
+table td,
+table th {
+  border: 2px solid rgb(224, 222, 222);
+  border-left: none;
+  border-right: none;
+}

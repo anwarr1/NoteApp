@@ -21,6 +21,55 @@ class Database
 
 
     }
+    public function DeleteNote($id)
+    {
+        $sql = "delete from notes where id=:id ";
+        $preparedStatement = $this->db->prepare($sql);
+        $preparedStatement->execute(['id' => $id,]);
+
+
+    }
+    public function UpdateNote($nom, $desc, $id)
+    {
+        $sql = "Update notes set name=:nom , description=:desc where id=:id";
+        $preparedStatement = $this->db->prepare($sql);
+        $preparedStatement->execute(['nom' => $nom, 'desc' => $desc, ':id' => $id]);
+
+
+    }
+    public function DisplayAllNotes()
+    {
+        $sql = "Select * from notes";
+        $preparedStatement = $this->db->prepare($sql);
+        $preparedStatement->execute();
+
+        while ($note = $preparedStatement->fetch(PDO::FETCH_OBJ)) {
+
+
+            echo "<tr>
+            <td>$note->name</td>
+            <td>$note->description</td>
+            <td><button><a href='update.php?id=$note->id'>Update</a></button>
+            <button><a href='delete.php?id=$note->id'>Supprimer</a></button>
+            </tr> ";
+
+
+        }
+
+    }
+
+    public function DisplayNote($id)
+    {
+        $sql = "Select * from notes where id=:id";
+        $preparedStatement = $this->db->prepare($sql);
+        $preparedStatement->execute(['id' => $id,]);
+
+        return $note = $preparedStatement->fetch(PDO::FETCH_OBJ);
+
+
+    }
+
+
 
 }
 
