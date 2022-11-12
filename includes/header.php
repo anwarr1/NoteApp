@@ -1,6 +1,7 @@
 <?php
 
 require_once "database/connection.php";
+session_start();
 $database = new Database();
 ?>
 <!DOCTYPE html>

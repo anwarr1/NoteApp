@@ -1,6 +1,7 @@
 <?php
 
 include 'includes/header.php';
+
 ?>
 
 
@@ -17,7 +18,7 @@ include 'includes/header.php';
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <div class="container">
-
+  <?php include 'includes/alert.php'; ?>
   <table>
     <tr>
       <th style="text-align: center;">Titre</th>

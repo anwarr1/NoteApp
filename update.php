@@ -1,6 +1,5 @@
 <?php
 require_once 'includes/header.php';
-session_start();
 if (isset($_POST['submit'])) {
     $database->UpdateNote($_POST['nom'], $_POST['description'], $_GET['id']);
 

@@ -19,14 +19,21 @@ class Database
         $preparedStatement = $this->db->prepare($sql);
         $preparedStatement->execute(['nom' => $nom, 'desc' => $desc]);
 
+        if ($preparedStatement) {
+            $_SESSION['added'] = "Added with success !";
+            header('location:index.php');
 
+        }
     }
     public function DeleteNote($id)
     {
         $sql = "delete from notes where id=:id ";
         $preparedStatement = $this->db->prepare($sql);
         $preparedStatement->execute(['id' => $id,]);
-
+        if ($preparedStatement) {
+            $_SESSION['deleted'] = "Deleted with success !";
+            header('location:index.php');
+        }
 
     }
     public function UpdateNote($nom, $desc, $id)
@@ -34,7 +41,11 @@ class Database
         $sql = "Update notes set name=:nom , description=:desc where id=:id";
         $preparedStatement = $this->db->prepare($sql);
         $preparedStatement->execute(['nom' => $nom, 'desc' => $desc, ':id' => $id]);
+        if ($preparedStatement) {
+            $_SESSION['updated'] = "Updated with success !";
+            header('location:index.php');
 
+        }
 
     }
     public function DisplayAllNotes()
